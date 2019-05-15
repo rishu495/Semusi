@@ -60,5 +60,30 @@ Route::get('/mail/delEmp', 'EmpController@mailDelEmp');
 
 
 //Employee Routes
+
+
 Route::get('/main/Emplogin','MainController@Emplogin');
 Route::post('/main/Empchecklogin','MainController@Empchecklogin');
+Route::get('/main/StudForm', function(){
+    return view('addStudForm');
+});
+Route::post('/main/studAddSuccess','StudController@studAddSuccess');
+Route::get('/mail/AddStud', 'StudController@mailAddStud');
+Route::get('/main/StudEdit', function(){
+    return view('StudViewId');
+});
+
+Route::post('/main/StudentEditForm','StudController@EditId');
+
+Route::post('/main/studUpdateSuccess','StudController@updateSubmitStudent');
+Route::get('/mail/updateStud', 'StudController@mailUpdStud');
+Route::get('/main/StudDel', function () {
+    return view('StudDeleteId');
+});
+
+Route::post('/main/StudentDelete','StudController@delete');
+Route::get('/mail/delStud', 'StudController@mailDelStud');
+Route::get('/main/StudView', function () {
+    return view('StudentViewId');
+});
+Route::post('/main/StudentViewForm','StudController@view');
